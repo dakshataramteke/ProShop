@@ -67,4 +67,10 @@ const registerController = async (req, res) => {
     }
 };
 
-module.exports =  registerController ;
+//Test Controller 
+const testController = (req,res)=>{
+console.log("Protected Route");
+res.send("Protrcted Routes")
+}
+
+module.exports =  {registerController ,testController};

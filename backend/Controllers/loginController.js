@@ -25,10 +25,14 @@ if(!match){
     })}
 
     //Token 
-    const token = await Jwt.sign({_id:User._id}, JwtSecret,{expiresIn:'7d'});
+    const token = await Jwt.sign({_id:checkuser._id}, JwtSecret,{expiresIn:'7d'});
     
-    res.status(200).send({success:true, message:"Login SUccessfully", user:{
-        name:checkuser.name, email:checkuser.email,phone:checkuser.phone, address: checkuser.address
+    res.status(200).send({success:true, message:"Login SUccessfully",
+         user:{
+        name:checkuser.name,
+         email:checkuser.email,
+         phone:checkuser.phone,
+      address: checkuser.address
     }, token})
 }catch(err){
     console.log(err);
